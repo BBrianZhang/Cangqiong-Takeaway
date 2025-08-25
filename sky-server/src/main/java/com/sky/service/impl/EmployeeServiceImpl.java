@@ -95,4 +95,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         List<Employee> employees = page.getResult();
         return new PageResult(total, employees);
     }
+
+    /**
+     * 修改员工状态
+     * @param status
+     * @param id
+     */
+    public void setStatus(Integer status, Long id) {
+        Employee employee = new Employee();
+        employee.setStatus(status);
+        employee.setId(id);
+        employeeMapper.update(employee);
+    }
 }
