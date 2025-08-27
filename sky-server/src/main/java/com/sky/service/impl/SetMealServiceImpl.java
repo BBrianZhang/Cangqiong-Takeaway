@@ -76,4 +76,18 @@ public class SetMealServiceImpl implements SetMealService {
         setMealMapper.deleteBatch(ids);
         setMealDishMapper.deleteBatch(ids);
     }
+
+    /**
+     * 根据id查询套餐
+     * @param id
+     * @return
+     */
+    public SetmealVO getById(Long id) {
+        Setmeal setmeal = setMealMapper.getById(id);
+        List<SetmealDish> setmealDishes = setMealDishMapper.getBySetmealId(id);
+        SetmealVO setmealVO = new SetmealVO();
+        BeanUtils.copyProperties(setmeal, setmealVO);
+        setmealVO.setSetmealDishes(setmealDishes);
+        return setmealVO;
+    }
 }

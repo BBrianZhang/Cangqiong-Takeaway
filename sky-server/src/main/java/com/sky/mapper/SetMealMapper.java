@@ -50,4 +50,5 @@ public interface SetMealMapper {
      * @param ids
      */
     void deleteBatch(List<Long> ids);
+
 }
