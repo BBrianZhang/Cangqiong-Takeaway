@@ -33,4 +33,17 @@ public interface SetMealService {
      * @return
      */
     SetmealVO getById(Long id);
+
+    /**
+     * 修改套餐
+     * @param setmealDTO
+     */
+    void updateWithDishes(SetmealDTO setmealDTO);
+
+    /**
+     * 修改套餐状态
+     * @param status
+     * @param id
+     */
+    void setStatus(Integer status, Long id);
 }
